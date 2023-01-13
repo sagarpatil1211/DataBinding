@@ -1,0 +1,55 @@
+<div class="container mt-3">
+    <!-- I. One way data binding -->
+  
+    <h1>I. One way data binding</h1>
+    <p><b>One-way data binding</b> is a one-way interaction between component and its template. If
+      you perform any changes in your component, then it will reflect the HTML elements.</p>
+  
+      <!-- ---1--- -->
+    <h2>1. String interpolation</h2>
+    <p>In general, <b>String interpolation</b> is the process of formatting or manipulating strings.</p>
+    <p> In Angular, <b>Interpolation</b> is used to display data from component ( TS file ) to view ( HTML DOM ).</p>
+    <p>It is denoted by the expression of <b>{{ symbol }}</b> and also known as mustache syntax.</p>
+    <p>Ex.1 Show data = {{name}}</p>
+    <p>Ex.2 Change data using setInterval : {{no}}</p>
+    <hr>
+  
+      <!-- ---2--- -->
+    <h2>2. Property binding</h2>
+    <p>Property binding is used to bind the data from property of a component to DOM elements. It is denoted by <b>[ ]</b>.</p>
+    <p>Ex.1 use value property of input tag to show name string variable  <input type="text" [value]="name"></p>
+    <p>Ex.2 use disabled property of button to change state of button (setInterval) see console log
+  
+      <button [disabled]="!enable" class="btn btn-primary">Click me</button></p>
+      <hr>
+  
+      <!-- ---3--- -->
+      <h2>3. Event binding</h2>
+      <p>Event binding is used to bind the data from DOM HTML element to component</p>
+      <p>Events are actions like mouse click, double click, hover or any keyboard and mouse actions.</p>
+      <p>If a user interacts with an application and performs some actions, then event will be raised.</p>
+      <p> It is denoted by either parenthesis <b>( )</b> </p>
+      <p>Ex.1 click to show alert <button (click)="show($event)" class="btn btn-primary">Click me</button></p>
+  
+      <hr>
+  
+      <!-- ---Assignment 1--- -->
+      <h2>Assignment 1. Create array of month & fill then in select</h2>
+      <!-- {{month}} -->
+      <div class="col-lg-3">
+        <select (change)="monthChanged($event)" class="form-control mb-3 mt-2">
+          <option *ngFor="let month of months" value="{{ month }}">{{ month }}</option>
+        </select>
+      </div>
+      <P>($event) has all the information about event and the target element. </P>
+      <p> Here, the target is <b>select.$event.target</b> property will have the target information. open console after click to show target </p>
+      <p>To get value of target you have to change into html value = HTMLSelectElement>(event.target)</p>
+      <hr>
+  
+      <!-- ---Assignment 2--- -->
+      <h2>Assignment 2. Greet the person with name given in textbox after clicking on button </h2>
+      <p>Enter your name:</p>
+      <input type="text" placeholder="Enter Name" (input)="inputText($event)"> <br> <br>
+      <button (click)="clicked()" class="btn btn-primary">Click me</button>
+      <!-- {{text}} for checking -->
+      <hr>

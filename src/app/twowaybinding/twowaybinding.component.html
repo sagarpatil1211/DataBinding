@@ -1,0 +1,31 @@
+<div class="container mt-3">
+  <!-- II. Two way data binding -->
+
+<h1>II. Two way data binding</h1>
+<p><b>Two-way data binding</b> is a two-way interaction, data flows in both ways ( from component to views and views to component ).</p>
+<p> Simple example is <b>ngModel</b>. If you do any changes in your property (or model) then, it reflects in your view and vice versa.</p>
+<p>. It is the combination of property and event binding.</p>
+<h3>ngModel</h3>
+<p><b>NgModel</b> is a standalone directive. <b>ngModel</b> directive binds form control to property and
+ property to form control.</p>
+ <p><b>FormModule</b> do the necessary setup to enable two-way data binding.</p>
+ <p>Configure FormsModule in AppModule</p>
+
+ <input type="text" [(ngModel)]="country"> <br>
+ {{country}} <br> <br>
+
+  <!-- ---Assignment 3--- -->
+  <h2>Assignment 3</h2>
+
+  <div class="col-lg-4 mt-3">
+    <select [(ngModel)]="selectedQuarter" (click)="QuarterChange()" class="form-control">
+      <option *ngFor="let Quarter of Quarters" value="{{Quarter}}">{{Quarter}}</option>
+    </select>
+  
+    <select [(ngModel)]="selectedMonth" class="form-control mt-3">
+      <option *ngFor="let item of month"  value="{{item}}">{{item}}</option>
+    </select> <br>
+    <p>You selected {{selectedQuarter}} {{selectedMonth}}  </p>
+  </div>
+
+</div>
